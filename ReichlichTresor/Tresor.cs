@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace ReichlichTresor
 {
-    public partial class Form1 : Form
+    public partial class Tresor : Form
     {
-        public Form1()
+        public Tresor()
         {
             InitializeComponent();
         }
+
+
+
     }
 }
