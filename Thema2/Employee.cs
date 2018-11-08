@@ -11,7 +11,7 @@ namespace Thema2
         public string Name { get; private set; }
         public Gender Gender { get; private set; }
         
-        Employee (string name, Gender gender)
+        public Employee (string name, Gender gender)
         {
             this.Name = name;
             this.Gender = gender;
