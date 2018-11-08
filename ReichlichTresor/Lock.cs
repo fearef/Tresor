@@ -6,19 +6,26 @@ using System.Threading.Tasks;
 
 namespace ReichlichTresor
 {
-    class Lock<T>
+    class Lock
     {
-        private List<T> arr = new List<T>(5);
+        private readonly int[] constCombo= {7,3,7,9,3};
+        private readonly int[] lockCombo;
 
-       
-        public T this[int i]
+        public int this [int i]
         {
-            get { return arr[i]; }         
+            get { return lockCombo[i]; }         
         }
 
-        public Lock ()
-        {
+        public int[] GetLock { get { return lockCombo; } }
 
+        public Lock(int[] combination=null)
+        {
+            if (lockCombo != null) lockCombo = combination;
+            else lockCombo = constCombo;
         }
+      
+        
+
+        
     }
 }

@@ -14,9 +14,10 @@ namespace ReichlichTresor
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tresor());
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Tresor());
+            Lockpicker.PickLock(new Lock());
         }
     }
 }
