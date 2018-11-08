@@ -16,7 +16,22 @@ namespace Thema2
             this.Name = name;
             this.Gender = gender;
         }
-        
+
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                return (((obj as Employee).Gender == this.Gender) && ((obj as Employee).Name == this.Name));
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public override int GetHashCode()
+        {
+            return (this.Name.GetHashCode());
+        }
     }
 
     public enum Gender { Male, Female}

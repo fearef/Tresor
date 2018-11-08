@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Thema2
 {
-    static class Employees
+     class EmployeesGroup:List<Employee>
     {
-        static List<Employee> GetEmployees()
+        static public List<Employee> GetEmployeesBaseCollection
         {
-            var array = new Employee[]{
+            get
+            {
+                var array = new Employee[]{
             new Employee("Lisa", Gender.Female),
                 new Employee("Marta", Gender.Female),
                 new Employee("Angelika", Gender.Female),
@@ -31,7 +33,34 @@ namespace Thema2
                 new Employee("Ben",Gender.Male),
                 new Employee("Joe",Gender.Male),
                 new Employee("Charlie", Gender.Male)};
-            return array.ToList();
+                return array.ToList();
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            try
+            {
+                var other = obj as EmployeesGroup;
+                foreach (var item in other)
+                {
+                    if(this.Contains(item)==false)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }                 
+        }
+
+        public override int GetHashCode()
+        {
+            return string.Join("", this.Select(x => x.Name)).GetHashCode();
         }
     }
 }
