@@ -28,7 +28,7 @@ namespace ReichlichTresor
                 {
                    if( TryLock(locker, stArray.Select(x => Int32.Parse(x)).ToArray()))
                     {
-                        Console.WriteLine($"Lock broken!\n Combinations tried: {combinationsCount}\n Seconds: {timer.Elapsed.Seconds}\n Correct combination: {myI}");
+                        Console.WriteLine($"Lock broken!\n Combinations tried: {combinationsCount}\n Milliseconds: {timer.Elapsed.Milliseconds}\n Correct combination: {myI}");
                        
                     }
                     combinationsCount++;
