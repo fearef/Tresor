@@ -17,7 +17,7 @@ namespace ReichlichTresor
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Tresor());
-            Lockpicker.PickLock(new Lock());
+            Lockpicker.PickLock(new Lock(new int[] {9,9,9,9,9 }));
         }
     }
 }

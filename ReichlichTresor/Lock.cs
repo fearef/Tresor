@@ -20,7 +20,7 @@ namespace ReichlichTresor
 
         public Lock(int[] combination=null)
         {
-            if (lockCombo != null) lockCombo = combination;
+            if (combination != null) lockCombo = combination;
             else lockCombo = constCombo;
         }
       
